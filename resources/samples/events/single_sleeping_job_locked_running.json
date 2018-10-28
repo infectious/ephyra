@@ -1,0 +1,5 @@
+{"event": "plan-invocation", "body": {"uuid": "bf4315a2-e906-49d5-be22-8f8c116a4c35", "root_job_name": "single_sleeping_job", "graph": {"nodes": [["single_sleeping_job", 0]], "links": []}, "started": "2018-02-28T14:12:24.080376+00:00", "version": "d8e6f827ef0943eaeaa54f1c2de27acb60212695", "start_time": "00:00", "stop_time": null, "interval": null}}
+{"event": "lock-acquisition-failure", "body": {"run_plan_uuid": "bf4315a2-e906-49d5-be22-8f8c116a4c35", "name": "single_sleeping_job", "started": "2018-02-28T14:12:25.285810", "attempt": 1, "max_attempts": 6}}
+{"event": "lock-acquisition-failure", "body": {"run_plan_uuid": "bf4315a2-e906-49d5-be22-8f8c116a4c35", "name": "single_sleeping_job", "started": "2018-02-28T14:12:37.301019", "attempt": 2, "max_attempts": 6}}
+{"event": "job-invocation", "body": {"run_plan_uuid": "bf4315a2-e906-49d5-be22-8f8c116a4c35", "name": "single_sleeping_job", "started": "2018-02-28T14:12:49.038464"}}
+{"event": "job-output", "body": {"run_plan_uuid": "bf4315a2-e906-49d5-be22-8f8c116a4c35", "name": "single_sleeping_job", "output": "MOCK JOB EXECUTION: Sleeping forever\n"}}

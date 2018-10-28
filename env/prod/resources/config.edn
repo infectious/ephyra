@@ -1,0 +1,7 @@
+{:production true
+ :port 3000
+ :healthcheck-port 3001
+ :max-hearbeat-interval 30
+ ;; Needs to be specified, as in https://github.com/tolitius/cprop
+ ; :kafka-server "host:port"
+ }

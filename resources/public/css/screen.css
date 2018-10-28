@@ -1,0 +1,267 @@
+html {
+    overflow-y: scroll;
+}
+
+html,
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 11pt;
+    height: 100%;
+}
+
+.btn-outline-secondary:not(:disabled):not(.disabled).active:focus {
+    box-shadow: none;
+}
+
+@media (max-width: 576px) {
+    nav.navbar {
+        flex-direction: column;
+    }
+}
+ul.nav {
+    flex-shrink: 100000;
+}
+ul.nav, ul.nav li, .nav li a {
+}
+div.jobs-plans-toggle {
+    margin-left: 0.5rem;
+}
+div.filtering-toolbar {
+    z-index: 0;
+    display: inline-flex;
+    /*flex: auto;*/
+    flex-wrap: wrap;
+    list-style:none;
+    padding: 0;
+}
+
+div.filtering-toolbar form.form-inline {
+    display: inline;
+}
+
+.input-group-prepend .input-group-text {
+    min-width: 4em;
+    text-align: left;
+}
+.input-group-prepend-lean .input-group-text {
+    min-width: 3em;
+}
+
+span.input-group.form-control-sm {
+    min-width: 0;
+    text-align: left;
+}
+
+form.form-inline .input-group {
+    margin-left: 0.3em;
+}
+
+form.form-inline {
+    margin-left: auto;
+}
+form.form-inline div.form-group {
+    margin-bottom: 0.6ex;
+}
+
+input.limit-input {
+    min-width: 4em;
+    max-width: 4em;
+}
+
+input.filter-input {
+    max-width: 16em;
+    min-width: 16em;
+}
+
+button.clear-input {
+    max-width: 2em;
+    min-width: 2em;
+    padding-left: 0em;
+    padding-right: 0em;
+    border-left: none;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    font-weight: bold;
+}
+
+input.datepicker-from {
+    max-width: 10em;
+    min-width: 10em;
+}
+
+input.datepicker-to {
+    max-width: 9em;
+    min-width: 9em;
+    border-right: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+div.input-group.datepicker input {
+    background-color: white;
+    padding-right: .4rem;
+}
+
+div.content {
+    margin: 2ex auto 0 auto;
+    width: 99%;
+}
+
+div.main-item {
+    margin: 0 0 2ex 0;
+    padding: 1.2ex 20px 0.4ex 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    border: 2px dashed #bbb;
+}
+
+div.overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+}
+
+div.overlay-shade {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(240, 240, 240, 0.5);
+    z-index: 2;
+}
+
+div.overlay-content {
+    position: fixed;
+    top: 3%;
+    right: 3%;
+    left: 3%;
+    max-height: 96%;
+    padding: 1% 1.5%;
+    border-radius: 10px;
+    border: 2px dashed #bbb;
+    background-color: #f9f9f9;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 3;
+}
+
+button.rerun-job {
+    float: right;
+}
+
+div.overflow-wrapper:hover {
+    cursor: pointer;
+}
+svg {
+    user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+}
+
+div.plan-header {
+    word-wrap: break-word;
+    margin-bottom: 0.3rem;
+}
+
+div.plan-header > div:not(:last-child) {
+    border-right: 1px solid #ccc;
+}
+
+p.past-items {
+    text-align: justify;
+    margin: 0 0.3rem 0.5rem 0.3rem;
+}
+
+table.job-table {
+    margin-top: 0.4rem;
+}
+
+table.job-history-table td {
+    border-top-width: 4px;
+}
+
+.version-expand {
+    cursor: pointer;
+}
+
+tr.job-output > td {
+    border-top: none;
+}
+
+tr.job-output pre {
+    margin-bottom: 0;
+    white-space: pre-wrap;
+}
+
+div.input-group.datepicker input[readonly] {
+    background-color: white;
+}
+
+div.fetching-msg {
+    position: fixed;
+    right: 10px;
+    bottom: 0px;
+    z-index: 100;
+
+    font-size: 10pt;
+
+    animation-name: blink;
+    animation-duration: 0.7s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+div.updates-feed {
+    position: fixed;
+    left: 2rem;
+    bottom: 1.5rem;
+    z-index: 100;
+
+    font-size: 10pt;
+}
+
+div.updates-feed div.alert {
+    display: table;
+    margin-bottom: 0;
+    margin-top: 0.4rem;
+
+    animation-name: appear;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+}
+
+@keyframes blink {
+    from {
+        opacity: 0.7;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+code {
+    background-color: transparent;
+    padding: 0;
+}

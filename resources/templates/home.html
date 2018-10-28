@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Generic DAG Jobs Dashboard</title>
+      <link rel="icon" type="image/png" href="/favicon.png">
+  </head>
+  <body>
+    <div id="app">
+      <div class="container-fluid">
+        <div class="card-deck">
+          <div class="card-block">
+            <h4>Loading..</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- scripts and styles -->
+    {% style "/assets/bootstrap/css/bootstrap.min.css" %}
+    {% style "/assets/font-awesome/css/font-awesome.min.css" %}
+    {% style "/css/pikaday.css" %}
+    {% style "/css/screen.css" %}
+
+    <script type="application/javascript">
+        window.context = "{{servlet-context}}";
+        window.csrfToken = "{{csrf-token}}";
+    </script>
+    {% script "/js/dagre.min.js" %}
+    {% script "/js/app.js" %}
+  </body>
+</html>

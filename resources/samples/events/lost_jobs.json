@@ -1,0 +1,7 @@
+{"event": "plan-invocation", "body": {"uuid": "b827289e-e6a1-411c-86de-dfb0a05b2ba8", "root_job_name": "single_sleeping_job", "graph": {"nodes": [["single_sleeping_job", 0]], "links": []}, "started": "2018-02-28T12:13:39.817647+00:00", "version": "d8e6f827ef0943eaeaa54f1c2de27acb60212695", "start_time": "00:00", "stop_time": null, "interval": null}}
+{"event": "lock-acquisition-failure", "body": {"run_plan_uuid": "b827289e-e6a1-411c-86de-dfb0a05b2ba8", "name": "single_sleeping_job", "started": "2018-02-28T12:13:41.126508", "attempt": 1, "max_attempts": 6}}
+{"event": "plan-invocation", "body": {"uuid": "8969912c-4b71-48fb-9439-59fcda934400", "root_job_name": "happy_single_job", "graph": {"nodes": [["happy_single_job", 0]], "links": []}, "started": "2018-02-28T17:48:41.536720+00:00", "version": "d8e6f827ef0943eaeaa54f1c2de27acb60212695", "start_time": null, "stop_time": null, "interval": 6.0}}
+{"event": "job-invocation", "body": {"run_plan_uuid": "8969912c-4b71-48fb-9439-59fcda934400", "name": "happy_single_job", "started": "2018-02-28T17:48:41.542629"}}
+{"event": "job-output", "body": {"run_plan_uuid": "8969912c-4b71-48fb-9439-59fcda934400", "name": "happy_single_job", "output": "I'm running.\n"}}
+{"event": "active-jobs", "body": {"jobs": [["8969912c-4b71-48fb-9439-59fcda934400", "happy_single_job"]]}}
+{"event": "active-jobs", "body": {"jobs": []}}

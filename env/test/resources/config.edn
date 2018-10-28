@@ -1,0 +1,11 @@
+{:dev true
+ :port 3000
+ :healthcheck-port 3001
+ :max-hearbeat-interval 30
+ ;; when :nrepl-port is set the application starts the nREPL server on load
+ :nrepl-port 7000
+ :kafka-server "localhost:9092"
+ :kafka-topic "ephyra"
+ :executor-run-plan-url "http://127.0.0.1:5000/run_plan/"
+ :executor-run-job-url "http://127.0.0.1:5000/run_job/"
+ }

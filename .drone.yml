@@ -1,0 +1,31 @@
+pipeline:
+  build:
+    image: clojure
+
+    commands:
+      # :redefd-vars has false positives on mount state definitions.
+      # :constant-test is dumb. Passing tests tend to be "always true" after all.
+      - lein do deps, eastwood "{:namespaces [:source-paths] :exclude-linters [:constant-test :redefd-vars]}", test
+      - lein nvd check
+      - LEIN_SNAPSHOTS_IN_RELEASE=true lein uberjar
+    environment:
+      - DATABASE_URL=postgresql://database/ephyra_test?user=ephyra
+
+  docker:
+    image: plugins/docker
+    when:
+      branch: [master, dev]
+    registry: https://eu.gcr.io/
+    username: _json_key
+    secrets: [ docker_password ]
+    repo: eu.gcr.io/infectiousmedia.com/infectiousdb/ephyra
+    tag: ${DRONE_COMMIT}
+    force_tag: true
+    storage_driver: overlay
+
+services:
+  database:
+    image: postgres:9.6
+    environment:
+      - POSTGRES_USER=ephyra
+      - POSTGRES_DB=ephyra_test

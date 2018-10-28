@@ -1,0 +1,3 @@
+{"event": "plan-invocation", "body": {"uuid": "7a40e2be-4dfc-4f0b-ac4e-ca5bd8e24c92", "root_job_name": "happy_single_job_running", "graph": {"nodes": [["happy_single_job_running", 0]], "links": []}, "started": "2018-02-28T17:46:41.536720+00:00", "version": "d8e6f827ef0943eaeaa54f1c2de27acb60212695", "start_time": null, "stop_time": null, "interval": 6.0}}
+{"event": "job-invocation", "body": {"run_plan_uuid": "7a40e2be-4dfc-4f0b-ac4e-ca5bd8e24c92", "name": "happy_single_job_running", "started": "2018-02-28T17:46:41.542629"}}
+{"event": "job-output", "body": {"run_plan_uuid": "7a40e2be-4dfc-4f0b-ac4e-ca5bd8e24c92", "name": "happy_single_job_running", "output": "I'm running.\n"}}

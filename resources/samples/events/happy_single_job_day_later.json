@@ -1,0 +1,4 @@
+{"event": "plan-invocation", "body": {"uuid": "0aa99db0-e870-4bbc-9e6c-f49f91a60094", "root_job_name": "happy_single_job", "graph": {"nodes": [["happy_single_job", 0]], "links": []}, "started": "2018-03-01T17:46:41.536720+00:00", "version": "d8e6f827ef0943eaeaa54f1c2de27acb60212695", "start_time": null, "stop_time": null, "interval": 6.0}}
+{"event": "job-invocation", "body": {"run_plan_uuid": "0aa99db0-e870-4bbc-9e6c-f49f91a60094", "name": "happy_single_job", "started": "2018-03-01T17:46:41.542629"}}
+{"event": "job-output", "body": {"run_plan_uuid": "0aa99db0-e870-4bbc-9e6c-f49f91a60094", "name": "happy_single_job", "output": "MOCK JOB EXECUTION: Job succeeded: happy_single_job\n"}}
+{"event": "job-completion", "body": {"run_plan_uuid": "0aa99db0-e870-4bbc-9e6c-f49f91a60094", "name": "happy_single_job", "stopped": "2018-03-01T17:46:41.615438", "output": "", "success": true}}
