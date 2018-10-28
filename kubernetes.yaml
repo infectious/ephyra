@@ -1,0 +1,73 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ephyra
+  labels:
+    app: ephyra
+spec:
+  template:
+    metadata:
+      labels:
+        app: ephyra
+    spec:
+      containers:
+        - name: web
+          image: eu.gcr.io/karomoomoo/ephyra
+          ports:
+            - containerPort: 3000
+          env:
+            - name: EXECUTOR_RUN_JOB_URL
+              value: http://localhost:5000/run_job  # will be unoccupied
+            - name: EXECUTOR_RUN_PLAN_URL
+              value: http://localhost:5000/run_plan  # will be unoccupied
+            - name: CLOUD_SQL_FORCE_UNIX_SOCKET
+              value: yeah
+            - name: DATABASE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: cloudsql-ephyra-demo-ephyra-password
+                  key: DATABASE_URL
+          volumeMounts:
+            - name: cloudsql-sockets
+              mountPath: /cloudsql
+              readOnly: true
+          resources:
+            requests:
+              memory: 512M
+              cpu: 200m
+          livenessProbe:
+            httpGet:
+              path: /ping
+              port: 3001
+            initialDelaySeconds: 15
+            periodSeconds: 3
+        - name: cloudsql-proxy
+          image: gcr.io/cloudsql-docker/gce-proxy:1.11
+          command: ["/cloud_sql_proxy",
+                    "-dir", "/cloudsql/",
+                    "-instances=karomoomoo:europe-west1:ephyra-demo",
+                    "-credential_file=/secrets/cloudsql/credentials.json"]
+          volumeMounts:
+            - name: cloudsql-credentials
+              mountPath: /secrets/cloudsql
+              readOnly: true
+            - name: cloudsql-sockets
+              mountPath: /cloudsql
+              readOnly: false
+      volumes:
+        - name: cloudsql-credentials
+          secret:
+            secretName: cloudsql-ephyra-demo-instance-credentials
+        - name: cloudsql-sockets
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: ephyra
+spec:
+  type: LoadBalancer
+  selector:
+    app: ephyra
+  ports:
+    - port: 80
+      targetPort: 3000

@@ -1,6 +1,6 @@
 # ephyra
 
-Generic DAG Jobs Dashboard
+Generic DAG Jobs Dashboard. Demo: http://ephyra-demo.karolinepauls.com/?date-from=2018-10-22
 
 ![Generic DAG Jobs Dashboard screenshots](Generic_DAG_Jobs_Dashboard.gif)
 
