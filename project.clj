@@ -4,6 +4,7 @@
   :url "https://github.com/infectious/ephyra"
 
   :dependencies [[cider/cider-nrepl "0.21.1"]
+                 [org.clojars.karo/scrolly-wrappy "0.1.1"]
                  [clj-http "3.9.1"]
                  [clj-statsd "0.4.0"]
                  [clj-time "0.15.1"]
