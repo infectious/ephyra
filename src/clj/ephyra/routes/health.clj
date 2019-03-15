@@ -1,5 +1,5 @@
 (ns ephyra.routes.health
-  (:require [clojure.spec :as s]
+  (:require [clojure.spec.alpha :as s]
             [clojure.tools.logging :as log]
             [clj-time.core :as t]
             [mount.core :as mount]

@@ -1,6 +1,6 @@
 (ns ephyra.encoding
-  (:require [clojure.spec :as s]
-            [clojure.spec.gen :as gen]
+  (:require [clojure.spec.alpha :as s]
+            [clojure.spec.gen.alpha :as gen]
             [clj-time.core :as t]
             [clj-time.format :as f]))
 

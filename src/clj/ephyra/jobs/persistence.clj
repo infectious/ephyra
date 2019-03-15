@@ -7,9 +7,8 @@
             [clj-statsd :as statsd]
             [clojure.tools.logging :as log]
             [clojure.java.jdbc :as jdbc]
-            [clojure.spec :as s]
-            [clojure.spec.gen :as sgen]
-            [clojure.spec.test :as stest]
+            [clojure.spec.alpha :as s]
+            [clojure.spec.gen.alpha :as sgen]
             [clojure.string :as string]
             [conman.core :as conman])
   (:import [org.joda.time.DateTime]))

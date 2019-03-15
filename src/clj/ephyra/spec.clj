@@ -1,6 +1,6 @@
 (ns ephyra.spec
   "clojure.spec utils"
-  (:require [clojure.spec :as s]
+  (:require [clojure.spec.alpha :as s]
             [slingshot.slingshot :refer [throw+]]))
 
 

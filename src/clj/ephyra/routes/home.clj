@@ -1,5 +1,5 @@
 (ns ephyra.routes.home
-  (:require [clojure.spec :as s]
+  (:require [clojure.spec.alpha :as s]
             [ephyra.config :refer [get-setting]]
             [ephyra.encoding :as e]
             [ephyra.validation :as v]

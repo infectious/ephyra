@@ -3,60 +3,55 @@
   :description "Generic DAG Jobs Dashboard"
   :url "https://github.com/infectious/ephyra"
 
-  :dependencies [[cider/cider-nrepl "0.17.0"]
-                 [clj-http "3.9.0"]
+  :dependencies [[cider/cider-nrepl "0.21.1"]
+                 [clj-http "3.9.1"]
                  [clj-statsd "0.4.0"]
-                 [clj-time "0.14.4"]
-                 [cljs-ajax "0.7.4"]
+                 [clj-time "0.15.1"]
+                 [cljs-ajax "0.8.0"]
                  [cljs-pikaday "0.1.4"]
-                 [clojure-future-spec "1.9.0-alpha14"]  ; Backport of core.spec
+                 [cljsjs/react-dom "16.3.2-0"]
+                 [cljsjs/react "16.3.2-0"]
+                 [clojure-future-spec "1.9.0"]  ; Backport of core.spec
                  [com.7theta/re-frame-fx "0.2.1"]
                  [com.andrewmcveigh/cljs-time "0.5.2"]
-                 ; override the version required by ring-middleware-format
-                 [com.ibm.icu/icu4j "62.1"]
-                 ; override the version required by org.webjars/webjars-locator
-                 [com.fasterxml.jackson.core/jackson-databind "2.9.6"]  ; 2.9.5 not released yet - CVE-2018-7489
-                 [com.google.cloud.sql/postgres-socket-factory "1.0.10"
+                 [com.google.cloud.sql/postgres-socket-factory "1.0.12"
                   :exclusions [com.google.guava/guava mysql/mysql-connector-java]]
                  [compojure "1.6.1"]
-                 [conman "0.6.3"]
-                 [cprop "0.1.11"]
+                 [conman "0.6.3"] ; New conman has broken exceptions, keeping [conman "0.8.3"].
+                 [cprop "0.1.13"]
                  [funcool/bide "1.6.0"]
                  [io.sentry/sentry-clj "0.7.2"]
-                 [io.sentry/sentry-logback "1.7.5"]
-                 [io.weft/gregor "0.7.0" :exclusions [log4j/log4j org.slf4j/slf4j-log4j12]]
-                 [io.weft/gregor "0.7.0"]
+                 [io.sentry/sentry-logback "1.7.22"]
+                 [io.weft/gregor "1.0.0" :exclusions [log4j/log4j org.slf4j/slf4j-log4j12]]
+                 [io.weft/gregor "1.0.0"]
                  [kibu/pushy "0.3.8"]
-                 [luminus-immutant "0.2.4"]
-                 [luminus-migrations "0.5.2"]
-                 [luminus-nrepl "0.1.4"]
-                 [markdown-clj "1.0.2"]
-                 [metosin/ring-http-response "0.9.0"]
-                 [mount "0.1.12"]
-                 ; override webjars-locator-jboss-vfs' version that causes problems with lein-nvd:
-                 [org.apache.commons/commons-lang3 "3.7"]
-                 [org.apache.kafka/kafka_2.12 "1.1.1"]
-                 [org.clojure/clojure "1.8.0"]
-                 [org.clojure/clojurescript "1.10.339" :scope "provided"]
-                 [org.clojure/core.async "0.4.474"]
+                 [luminus-immutant "0.2.5"]
+                 [luminus-migrations "0.5.2"] ; Not upgraded - "0.6.4" causes problems
+                 [luminus-nrepl "0.1.6"]
+                 [markdown-clj "1.0.7"]
+                 [metosin/ring-http-response "0.9.1"]
+                 [mount "0.1.16"]
+                 [org.apache.kafka/kafka_2.12 "2.1.1"]
+                 [org.clojure/clojure "1.9.0"]
+                 [org.clojure/clojurescript "1.10.520" :scope "provided"]
+                 [org.clojure/core.async "0.4.490"]
                  [org.clojure/test.check "0.9.0"]  ; Used by clojure.spec/gen.
-                 [org.clojure/tools.cli "0.3.7"]
+                 [org.clojure/tools.cli "0.4.1"]
                  [org.clojure/tools.logging "0.4.1"]
-                 [org.postgresql/postgresql "42.2.4"]
-                 [org.slf4j/log4j-over-slf4j "1.7.25"]  ; Kafka indirectly depends on slf4j.
+                 [org.postgresql/postgresql "42.2.5"]
+                 [org.slf4j/log4j-over-slf4j "1.7.26"]  ; Kafka indirectly depends on slf4j.
                  [org.webjars.bower/tether "1.4.4"]
-                 [org.webjars/bootstrap "4.1.1"]
-                 [org.webjars/font-awesome "5.1.0"]
+                 [org.webjars/bootstrap "4.3.1"]
+                 [org.webjars/font-awesome "5.7.2"]
                  [org.webjars/webjars-locator-jboss-vfs "0.1.0"]
-                 [re-frame "0.10.5"]
+                 [re-frame "0.10.6"]
                  [reagent "0.8.1"]
-                 [reagent-utils "0.3.1"]
-                 [ring-middleware-format "0.7.2"]
+                 [reagent-utils "0.3.2"]
+                 [ring-middleware-format "0.7.4"]
                  [ring-webjars "0.2.0"]
                  [ring/ring-defaults "0.3.2"]
-                 [ring/ring-core "1.6.3"]  ; Override compojure's 1.6.0
                  [secretary "1.2.3"]
-                 [selmer "1.11.8"]
+                 [selmer "1.12.9"]
                  [slingshot "0.12.2"]]
 
   :min-lein-version "2.0.0"
@@ -109,21 +104,21 @@
    :dev           [:project/dev :profiles/dev]
    :test          [:project/dev :project/test :profiles/test]
 
-   :project/dev  {:dependencies [[prone "1.6.0"]
+   :project/dev  {:dependencies [[prone "1.6.1"]
                                  [ring/ring-mock "0.3.2"]
-                                 [ring/ring-devel "1.6.3"]
-                                 [pjstadig/humane-test-output "0.8.3"]
+                                 [ring/ring-devel "1.7.1"]
+                                 [pjstadig/humane-test-output "0.9.0"]
                                  [binaryage/devtools "0.9.10"]
                                  [com.cemerick/piggieback "0.2.2"]
-                                 [doo "0.1.10"]
+                                 [doo "0.1.11"]
                                  [figwheel-sidecar "0.5.16"]
-                                 [day8.re-frame/re-frame-10x "0.3.3"]]
+                                 [day8.re-frame/re-frame-10x "0.3.7"]]
                   :plugins      [[cider/cider-nrepl "0.16.0"]
                                  [com.jakemccrary/lein-test-refresh "0.14.0"]
                                  [lein-doo "0.1.7"]
                                  [lein-figwheel "0.5.16"]
                                  [lein-nvd "0.4.2"]
-                                 [org.clojure/clojurescript "1.10.339"]]
+                                 [org.clojure/clojurescript "1.10.520"]]
                   :cljsbuild
                   {:builds
                    {:app

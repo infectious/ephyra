@@ -3,7 +3,7 @@
   (:require
     [clojure.tools.logging :as log]
     [clojure.string :as string]
-    [clojure.spec :as s]
+    [clojure.spec.alpha :as s]
     [gregor.core :as gregor]
     [mount.core :as mount :refer [defstate]]
     [cheshire.core :refer [parse-string]]

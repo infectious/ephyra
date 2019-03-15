@@ -129,4 +129,13 @@
         <gav regex="true">^co\.deps:ring-etag-middleware:.*$</gav>
         <cpe>cpe:/a:app_project:app</cpe>
     </suppress>
+
+    <!-- We're not MySQL. -->
+    <suppress>
+        <notes><![CDATA[
+            file name: jdbc-socket-factory-core-1.0.12.jar
+            ]]></notes>
+        <gav regex="true">^com\.google\.cloud\.sql:jdbc-socket-factory-core:.*$</gav>
+        <cpe>cpe:/a:mysql:mysql</cpe>
+    </suppress>
 </suppressions>
